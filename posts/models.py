@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Post(models.Model):  #inhearitance
@@ -7,5 +8,8 @@ class Post(models.Model):  #inhearitance
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True) #timestamp (number of miliseconds since january 1st 1970 and django converts it to a readable form)
 
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("detail", args=[self.id])

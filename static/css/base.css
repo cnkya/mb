@@ -1,0 +1,4 @@
+.nav-item a:hover{
+    border-left: 3px solid black;
+    text-shadow: 1px .5px rgb(97, 94, 94);
+    }

@@ -4,7 +4,7 @@ from django.views.generic import (
     CreateView
 )
 from .models import Post
-
+#from django.urls import reverse this creates lookup url function
 
 
 class PostListView(ListView):    #scan operation
@@ -19,4 +19,5 @@ class PostCreateView(CreateView):   #create new records
     template_name = "posts/new.html"
     model = Post
     fields = ["title", "subtitle", "body"]
+    #success_url = reverse("list") use when you have an exception to the rule 
 
